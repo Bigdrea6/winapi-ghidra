@@ -11,7 +11,7 @@ The output is a table, the number of API types and the number of API CALLs.
 Clicking on the address will take you to the CALL location, and clicking on the API will take you to the API information in .rdata.
 ![output-table](./png/call_table.png)
 
-![output-table2](./png/call_table2.png)
+![output-table2](./png/call_tabel2.png)
 
 ※Caution.
 
@@ -19,10 +19,10 @@ This code does not pick up APIs (such as URLDownloadToFileA) used in Thunk Funct
 
 # auto_equate_setting.py
 Set the correct equate for the API arguments (constants only).However, the following four APIs are supported.
--CreateProcessA:
--RegCreateKeyExA:
--RegValueExA:
--SHGetSpecialFolderPathA:
+- CreateProcessA
+- RegCreateKeyExA
+- RegValueExA
+- SHGetSpecialFolderPathA
 
 Load api_dict.json
 
@@ -37,7 +37,7 @@ After
 ![after](./png/after_regcreate.png)
 
 The future development process will be twofold.
--Increase dictionaries.:
--Migration from dictionary to gdt.:
+- Increase dictionaries.
+- Migration from dictionary to gdt.
 
 If you are interested in this repository and have a suggestion, please feel free to pull request.
