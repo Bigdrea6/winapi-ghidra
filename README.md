@@ -1,4 +1,4 @@
-## winapi-ghidra
+# winapi-ghidra
 The development was based on the desire to enable PE to be analyzed quickly.
 
 call_api_table.py is complete. However, auto_equate_setting.py is a prototype. This is being done with a dictionary, but we hope to gradually make it gdt-based.
@@ -11,7 +11,6 @@ The output is a table, the number of API types and the number of API CALLs.
 Clicking on the address will take you to the CALL location, and clicking on the API will take you to the API information in .rdata.
 
 ![output-table](./png/call_table.png)
-
 ![output-table2](./png/call_table2.png)
 
 ※Caution.
