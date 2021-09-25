@@ -28,13 +28,15 @@ Load api_dict.json
 
 The output is an array of arguments and an array of set equates.
 
-![output-table3](./png/equate_table.png)
+![output-table3](./png/output.png)
 
 Before
 ![before](./png/before_regcreate.png)
 
 After
 ![after](./png/after_regcreate.png)
+
+![equate_table](./png/equate_table.png)
 
 The future development process will be twofold.
 - Increase dictionaries.
