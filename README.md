@@ -9,6 +9,7 @@ Lists the address of the CALL that calls the Windows API and its Windows API.
 The output is a table, the number of API types and the number of API CALLs.
 
 Clicking on the address will take you to the CALL location, and clicking on the API will take you to the API information in .rdata.
+
 ![output-table](./png/call_table.png)
 
 ![output-table2](./png/call_tabel2.png)
