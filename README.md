@@ -12,7 +12,7 @@ Clicking on the address will take you to the CALL location, and clicking on the 
 
 ![output-table](./png/call_table.png)
 
-![output-table2](./png/call_tabel2.png)
+![output-table2](./png/call_table2.png)
 
 ※Caution.
 
