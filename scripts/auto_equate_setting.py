@@ -13,15 +13,12 @@ decompiler = DecompInterface()
 decompiler.openProgram(currentProgram)
 
 api_dict = {}
-created_eq = {}
 
 def set_equate(vnode, equate):
-    global created_eq
-    if equate in created_eq:
-        new_eq = created_eq[equate]
-    else:
+    if currentProgram.getEquateTable().getEquate(equate) == None:
         new_eq = currentProgram.getEquateTable().createEquate(equate, vnode.getOffset())
-        created_eq[equate] = new_eq
+    else:
+        new_eq = currentProgram.getEquateTable().getEquate(equate)
 
     dynamic_hash = DynamicHash(vnode, 0)
     new_eq.addReference(dynamic_hash.getHash(), dynamic_hash.getAddress())
@@ -42,18 +39,11 @@ def confirm_argument(addr, api):
 
                 if vnode.isConstant():
                     constant_subscripts.append(subscript)
-
-                    if subscript in api_dict[api]['verifi_offset']:
-                        offset = vnode.getOffset()
-                        equate = api_dict[api][str(subscript)][str(offset)]
-                        equates.append(equate)
-
-                        set_equate(vnode, equate)
-                    else:
-                        equate = api_dict[api][str(subscript)]
-                        equates.append(equate)
-
-                        set_equate(vnode, equate)
+                    offset = vnode.getOffset()
+                    equate = api_dict[api][str(subscript)][str(offset)]
+                    equates.append(equate)
+                    
+                    set_equate(vnode, equate)
 
     print("[+]{} {} {}".format(api, constant_subscripts, equates))
 
