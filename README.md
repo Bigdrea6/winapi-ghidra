@@ -10,13 +10,11 @@ Clicking on the address will take you to the CALL location, and clicking on the 
 ![output-table](./png/call_table.png)
 ![output-table2](./png/call_table2.png)
 
-※Caution.
-
+※Caution. 
 This code does not pick up APIs (such as URLDownloadToFileA) used in Thunk Functions.
 
 ## api_summary.py
-Embed a summary of the api in a comment. The overview is in line with MSDN. It is not very practical because there are very few api's that are supported.
-
+Embed a summary of the api in a comment. The overview is in line with MSDN. It is not very practical because there are very few api's that are supported. 
 Load api_summary.json
 
 ## auto_equate_setting.py
@@ -26,8 +24,7 @@ Set the correct equate for the API arguments (constants only).However, the follo
 - RegValueExA
 - SHGetSpecialFolderPathA
 
-Load api_dict.json
-
+Load api_dict.json 
 The output is an array of arguments and an array of set equates.
 
 ![output-table3](./png/output.png)
