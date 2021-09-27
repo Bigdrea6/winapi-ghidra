@@ -59,7 +59,7 @@ def make_table():
 def load_dict():
     global api_dict
     try:
-        dataset = askFile("Choose dataset:", "Equate Table").toString()
+        dataset = askFile("Choose dataset:", "Set").toString()
         with open(dataset, 'r') as f:
             api_dict = json.load(f)
         print("[+]Loaded File")
