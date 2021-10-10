@@ -17,7 +17,7 @@ This code does not pick up APIs (such as URLDownloadToFileA) used in Thunk Funct
 Embed a summary of the api in a comment. The overview is in line with MSDN. It is not very practical because there are very few api's that are supported.  
 Load api_summary.json  
 
-※Beta
+※Beta  
 There are beta database in the summary branch.
 
 ## auto_equate_setting.py
