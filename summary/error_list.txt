@@ -1,0 +1,12 @@
+error reason
+Exとnormalが説明一緒のときに起こってる
+2とnormal
+Iとnormal
+
+・https://docs.microsoft.com/en-us/windows/win32/api/commctrl/
+・https://docs.microsoft.com/en-us/windows/win32/api/intsafe/
+・https://docs.microsoft.com/en-us/windows/win32/api/iphlpapi/
+・https://docs.microsoft.com/en-us/windows/win32/api/pathcch/
+・https://docs.microsoft.com/en-us/windows/win32/api/propsys/
+・https://docs.microsoft.com/en-us/windows/win32/api/shlwapi/
+・https://docs.microsoft.com/en-us/windows/win32/api/winnt/
