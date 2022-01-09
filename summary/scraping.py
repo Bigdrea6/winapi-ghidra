@@ -1,7 +1,9 @@
-import re
 import requests as req
 from bs4 import BeautifulSoup as bs
 import json
+import re
+
+from summarize import summarize_sentences
 
 api_summary={}
 
@@ -15,49 +17,39 @@ def make_dict(apis, summaries):
             value = summaries[i]
             api_summary[key] = value
 
-def deduplication(list):
-    new_list = []
-    for l in list:
-        if l not in new_list:
-            new_list.append(l)
-    
-    return new_list
-
-def scrap(soup):
+def scrap(soup, n):
     # スクレイピング
     table = soup.find_all('table')
 
-    tds = table[0].find_all('td')
+    tds = table[n].find_all('td')
     tds = [(td.get_text()).split(' ', 1) for td in tds]
+    print("1. get data")
 
-    apis = [td[0] for td in tds] 
-    summaries = [td[1] for td in tds] 
+    # 取得データの整理
+    apis = []
+    summaries = []
+    for td in tds:
+        apis.append(td[0])
 
-    for i in range(len(apis)):
-        if apis[i][-1] == "A" or apis[i][-1] == "W":
-            apis[i] = apis[i][:-1]
-
-    apis = deduplication(apis)
-    summaries = deduplication(summaries)
+        td[1] = re.sub("\(.*\)", "", td[1])
+        if td[1].count(".") != 1:
+            td[1] = summarize_sentences(td[1])
+        summaries.append(td[1])
+    print("2. make list")
 
     make_dict(apis, summaries)
-
-    
+    print("3. make dict")
 
 if __name__ == '__main__':
-    with open('summary.json', 'r') as d:
-        api_summary = json.load(d)
-    
-    url = 'https://docs.microsoft.com/en-us/windows/win32/api/winuser/'
+    # いろんな要素の入力
+    url = input()
+    table_number = int(input())
+    f_name = input()
+
     response = req.get(url)
     soup = bs(response.text, 'html.parser')
     
-    scrap(soup)
+    scrap(soup, table_number)
 
-    with open('summary.json', 'w') as d:
+    with open(f_name, 'w') as d:
         json.dump(api_summary, d)
-
-"""
-Error
-
-"""
