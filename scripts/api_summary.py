@@ -7,9 +7,7 @@ import json
 api_summary = {}
 
 def set_summary(api, addr):
-    if api not in api_summary.keys():
-        print("[!] Not support {}".format(api))
-    else:
+    if api in api_summary.keys():
         if getEOLComment(addr) != api_summary[api]:
             setEOLComment(addr, api_summary[api])
 
@@ -18,9 +16,6 @@ def make_table():
         if externalReference.getReferenceType().isCall():
             call_addr = externalReference.getFromAddress()
             api = externalReference.getExternalLocation().getLabel()
-
-            if api[-1] == 'A' or api[-1] == 'W':
-                api = api[:-1]
             
             set_summary(api, call_addr)
 

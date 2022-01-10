@@ -1,0 +1,1 @@
+{"CloseHandle": "Closes an open object handle.", "CompareObjectHandles": "Compares two object handles to determine if they refer to the same underlying kernel object.", "DuplicateHandle": "Duplicates an object handle.", "GetHandleInformation": "Retrieves certain properties of an object handle.", "SetHandleInformation": "Sets certain properties of an object handle."}
